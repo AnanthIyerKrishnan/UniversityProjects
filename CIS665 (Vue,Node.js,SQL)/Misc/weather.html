@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Weather API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <style>
+        .warm {
+            background-color: orange;
+        }
+
+        .pleasant {
+            background-color: yellow;
+        }
+
+        .cool {
+            background-color: mediumaquamarine;
+        }
+
+        .cold {
+            background-color: lightskyblue;
+        }
+
+        .really-cold {
+            background-color: deepskyblue;
+        }
+
+        .white {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="padding: 30px;">
+        <div class="row justify-content-center" style="margin: 30px;">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <form id="my-form">
+                        <label for="zip-input">Enter a zip code:</label>
+                        <input type="text" pattern="\d*" maxlength="5" required class="form-control" id="zip-input"
+                            title="Only zip codes allowed:00000" autofocus>
+
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div id="output" class="card" style="padding: 90px;border-radius: 5px;">
+            <div class="card-body">
+                <h5 id="weather-output" class="card-title text-center">What's the weather?</h5>
+                <p id="location-output" class="card-text text-center">
+                    Enter a zip code to find out!
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // add event listener
+        document.getElementById("my-form").addEventListener("submit", getWeather);
+        function getWeather(myEvent) {
+            myEvent.preventDefault();
+            let zipCode = document.getElementById("zip-input").value;
+            console.log("zip:", zipCode);
+            // now fetch from API
+            fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&APPID=7c552ff3c0ccd6865ad13e3e88dd21cc&units=imperial`).then(resp => {
+                return resp.json();
+            })
+                .then(theObject => {
+                    console.log(theObject);
+                    document.getElementById("weather-output").innerText = theObject.main.temp;
+                    // add in the degree symbol unicode along with conditions
+                    document.getElementById("weather-output").innerText += "\u00B0 " + theObject.weather[0].main;
+                    // now add the location  to the relevant div
+                    document.getElementById("location-output").innerText = `${theObject.name},${theObject.sys.country}`;
+                    // update the output section based on different temperature thresholds.
+                    let outputSection = document.getElementById("output");
+                    let myColor;
+                    let myTemp = theObject.main.temp;
+                    // now test various thresholds of myTemp and assign values 
+                    if (myTemp > 80) {
+                        myColor = "warm";
+                    }
+                    else if (myTemp > 70) {
+                        myColor = "pleasant";
+                    }
+                    else if (myTemp > 60) {
+                        myColor = "cool";
+                    }
+                    else if (myTemp > 50) {
+                        myColor = "cold";
+                    }
+                    else if (myTemp > 40) {
+                        myColor = "really-cold";
+                    }
+                    else {
+                        myColor = "white";
+                    }
+                    outputSection.setAttribute("class", myColor);
+                })
+                .catch(() => {
+                    document.getElementById("weather-output").innerText = "";
+                    document.getElementById("location-output").innerText = "";
+                    document.getElementById("output").setAttribute("class", "white");
+                });
+        } // end function
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

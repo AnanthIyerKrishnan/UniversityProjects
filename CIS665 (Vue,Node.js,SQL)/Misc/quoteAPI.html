@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quotes API</title>
+    <meta charset="utf-8">
+    <style>
+        table,
+        td,
+        tr,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Quotes</h3>
+    <div id="output">
+        <script>
+            let myQuotes;
+            fetch("https://cisweb.biz.colostate.edu/cis665/KinnettS/api/quotes")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (jsonResponse) {
+                    console.log(jsonResponse);
+                    // update the DOM
+                    document.getElementById("output").innerHTML = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PK</th>
+                                <th>Quote</th>
+                                <th>Movie</th>
+                                </tr>
+                                </thead>
+                                <tbody id="quotes-body">
+                    `;
+                    // now cruise through the array, adding a tr for each array
+                    jsonResponse.forEach(thisQuote => {
+                        document.getElementById("quotes-body").innerHTML += `
+                        <tr>
+                            <td>${thisQuote.quotePK}</td>
+                            <td>${thisQuote.quote}</td>
+                            <td>${thisQuote.movie}</td>
+                            </tr>
+                        `
+                    });
+                    document.getElementById('quotes-body').innerHTML+=`
+                   </tbody>
+                   </table>
+                    `
+                }) // end of second then block
+                .catch(myError=>{
+                    console.log("Error in fetch",myError);
+                    document.getElementById("output").innerHTML=`
+                    Sorry this page is unavailable.
+                    `
+                });
+        </script>
+    </div>
+</body>
+
+</html>

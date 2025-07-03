@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="personalstyles.css">
+    <script src="https://kit.fontawesome.com/f8e3707445.js"></script>
+</head>
+
+<body>
+    <header id="welcome">
+        <a id="logo-container" href="index.html">
+            <img src="images/eldenring.jpg" alt="Elden Ring Logo"/>
+            <h2>Welcome to My Website!</h2>
+        </a>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="contact-section">
+        <div class="contact-left">
+            <h3>Connect With Me</h3>
+            <p>Follow me on social media!</p>
+            <div class="social-icons">
+                <a href="https://twitter.com/ananth99p" target="_blank">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+                <a href="https://linkedin.com/in/ananth-krishnan-iyer/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+        <div class="contact-right">
+            <h2>Contact Me</h2>
+            <form id="contactForm" action="https://submissionsite.com" method="post">
+                <div class="form-group">
+                    <label for="txtName">Full Name</label>
+                    <input type="text" id="txtName" name="fName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailAddress">Email</label>
+                    <input type="email" id="emailAddress" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telPhone">Phone</label>
+                    <input type="tel" id="telPhone" name="phone" placeholder="123-456-7890" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="numAge">Age</label>
+                    <input type="number" id="numAge" name="age" min="18" max="150" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtarMessage">Message</label>
+                    <textarea id="txtarMessage" name="message" placeholder="Type your message here..." rows="5" ></textarea>
+                </div>
+
+                <button type="submit" class="my-button">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <hr>
+        Developed by Ananth Iyer
+    </footer>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Hi, I am a student in CIS310
+I am using magic commands to create this file
+
+This is the first line added to file1.txt!
+This is the sceond line added to file1.txt!

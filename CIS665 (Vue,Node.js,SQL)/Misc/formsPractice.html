@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Forms Practice</title>
+        <meta charset="utf-8">
+        <!-- optional link rel=stylesheet call goes here -->
+        <style>
+            /* optional internal/embedded styling */
+        </style>
+    </head>
+    <body>
+     <h1>Welcome, <span id="output"></span> to my forms practice page</h1>
+     <form id="frmPracticeForm">
+        <br />
+        <!-- space/ indicates self closing tag -->
+         <label for="txtName" style="margin-right: 4px;">Full Name:</label>
+             <input type="text" id="txtName">
+        <br>
+        <label for="selBirthMonth">Birth Month:</label>
+        <select id="selBirthMonth">
+            <option value="jan">January</option>
+            <option value="feb">February</option>
+            <option value="mar">March</option>
+            <option value="apr">April</option>
+            <option value="may">May</option>
+            <option value="jun">June</option>
+            <option value="jul">July</option>
+            <option value="aug">August</option>
+            <option value="sept">September</option>
+            <option value="oct">October</option>
+            <option value="nov">November</option>
+            <option value="dec">December</option>
+        </select>
+        <br>
+        <h2>Favourite Color(s)</h2>
+        <label for="chkGreen">Green</label>
+        <input type="checkbox" id="chkGreen">
+        <br>
+        <label for="chkBlue">Blue</label>
+        <input type="checkbox" id="chkBlue">
+        <br>
+        <label for="chkBlack">Black</label>
+        <input type="checkbox" id="chkBlack">
+        <br>
+        <label for="chkYellow">Yellow</label>
+        <input type="checkbox" id="chkYellow">
+        <br>
+        <input type="button" onclick="getName()" value="Submit">
+     </form>
+<script>
+console.log("Welcome to 665 Forms Practice","another value");
+
+// // next line shows user-facing popup box
+// alert("Hey hey! look at me !");
+
+// let errMessage="Test error message";
+// console.log("error is ",errMessage);
+
+// //  next , elicit text from the user and store in variable
+// let fullName=prompt("enter your full name");
+// console.log("Full name is ",fullName);
+ 
+// // now populate placeholder div "output" with fullName variable
+// document.getElementById("output").innerHTML=fullName;
+
+function getName(){
+    let name=document.getElementById("txtName").value;
+    document.getElementById("output").innerHTML=name;
+    console.log(name);
+}
+</script>
+    </body>
+</html>

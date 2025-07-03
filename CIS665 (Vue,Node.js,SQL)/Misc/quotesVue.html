@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue Practice/Intro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container" style="padding:30px" id="app">
+        <p>Hello, {{theName}}</p>
+        <p>{{printGreeting()}}</p>
+        <div class="row justify-content-center" style="margin: 30px;">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="quote-input">Quote</label>
+                    <textarea id="quote-input" class="form-control" rows="3" v-model="quoteInput"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="movie-input">Movie</label>
+                    <input type="text" class="form-control" id="movie-input" v-model="movieInput">
+                </div>
+                <p>Current quote:{{quoteInput}}</p>
+                <p>Current movie:{{movieInput}}</p>
+                <button class="btn btn-primary" v-on:click="addMovieQuote">Submit</button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-6">
+                <div id="quotes">
+                    <div class="card" style="margin-bottom: 10px;" v-for="thisItem in movieQuotes">
+                        <div class="card-body">
+                            <div class="blockquote mb-0">
+                                <p>{{thisItem.quote}}</p>
+                                <footer class="blockquote-footer">{{thisItem.movie}}</footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const myApp = Vue.createApp({
+            data: function () {
+                return {
+                    theName: "Tom Cruise",
+                    quoteInput: "",
+                    movieInput: "",
+                    movieQuotes: []
+                }
+            },
+            methods: {
+                printGreeting() {
+                    return "Greetings! Enter a quote and a movie!";
+                },
+                addMovieQuote() {
+                    this.movieQuotes.push({
+                        quote: this.quoteInput,
+                        movie: this.movieInput
+                    });
+                    console.log('quotes so far', this.movieQuotes);
+                    this.quoteInput = "";
+                    this.movieInput = ""
+                }
+            }
+        });
+        myApp.mount("#app");
+    </script>
+</body>
+
+</html>

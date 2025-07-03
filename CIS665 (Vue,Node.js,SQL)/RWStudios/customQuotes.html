@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Custom Quote Log</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <form>
+        <label for="txtarQuote">Quote</label><br>
+        <textarea id="txtarQuote" size="25" rows="3"></textarea>
+        <br>
+        <label for="txtMovie">Movie</label><br>
+        <input type="text" id="txtMovie" size="25">
+        <p>
+            <input type="button" onclick="runCode()" value="Submit">
+        </p>
+    </form>
+    <br>
+    <div id="output" style="max-width: 30%;"></div>
+    <script>
+        function runCode() {
+            // grab the values from the form controls
+            let quote = document.getElementById("txtarQuote").value;
+            let movie = document.getElementById("txtMovie").value;
+            // clear out the controls after values are captured
+            document.getElementById("txtarQuote").value = "";
+            document.getElementById("txtMovie").value = "";
+            // create a paragraph element
+            let myPara = document.createElement("p");
+            // set some styling
+            myPara.style = "border:1px solid blue;";
+            // place movie and quote inside paragraph element
+            myPara.innerHTML = `<h2>${quote}</h2><h4>${movie}</h4>`;
+            // update placeholder div to add paragraph element
+            // newest quote should appear at the top
+            let output = document.getElementById("output");
+
+            // update placeholder div to add paragraph element
+            // newest quote should appear at the top
+            output.insertBefore(myPara, output.firstChild);
+        }
+    </script>
+</body>
+
+</html>

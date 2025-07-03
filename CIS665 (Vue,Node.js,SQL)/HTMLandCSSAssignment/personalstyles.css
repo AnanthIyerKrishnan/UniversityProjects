@@ -1,0 +1,337 @@
+body {
+    font-family: Georgia, Garamond, Arial;
+    margin: 0;
+}
+
+a {
+    color: #3e9c35;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+}
+
+.nav a {
+    margin: 0 15px;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#logo-container img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.my-container-outer {
+    display: flex;
+    justify-content: center;
+    background-color: #e2c3dc;
+}
+
+.my-container-row {
+    padding: 20px;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.my-item {
+    padding: 20px;
+    flex: 1 1 300px;
+}
+
+.my-item-center-vertical {
+    display: flex;
+    align-items: center;
+}
+
+.my-item-center-horizontal {
+    display: flex;
+    justify-content: center;
+}
+
+.hero {
+    padding: 50px 10px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 45px;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.5em;
+}
+
+#hero-home {
+    background: linear-gradient(to top right, rgb(160 185 162 / 90%), rgb(52 58 122 / 90%)), url(images/cloudsbackground.jpg);
+    background-size: cover;
+}
+#headline-title-container {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    max-width: 300px;
+    text-align: center;
+    margin: auto;
+    background: rgba(179, 157, 219, 0.8);
+    color: #1a1a1a;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+
+#hero-description {
+    max-width: 400px;
+    color: #fff97e;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    word-spacing: 5px;
+}
+.contact-container {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+.my-button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #3e9c35;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.my-button:hover {
+    background-color: #2c6b25;
+}
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: linear-gradient(to top right, rgb(160 185 162 / 90%), rgb(52 58 122 / 90%)), url(images/cloudsbackground.jpg);
+    background-size: cover;
+}
+.contact-left {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-left h3 {
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 10px;
+    font-size: 50px;
+    color: #2c3e50;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #3e9c35;
+}
+
+.contact-right {
+    flex: 1;
+    padding: 20px;
+}
+
+.contact-right h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+.my-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #3e9c35;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.my-button:hover {
+    background-color: #2c6b25;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background-color: #3e9c35;
+    color: white;
+}
+
+td {
+    font-size: 18px;
+}
+
+.my-container-outer {
+    padding: 20px;
+    margin-top: 20px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-container-outer {
+    flex: 1; 
+}
+
+.about-container-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.about-content {
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.anime-list {
+    list-style-type: disc;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 400px;
+    font-size: 18px;
+    line-height: 1.8;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+
+.anime-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+.anime-table th, 
+.anime-table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.anime-table th {
+    background-color: #3e9c35;
+    color: white;
+}

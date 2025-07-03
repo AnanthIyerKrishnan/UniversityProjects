@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello World!</title>
+        <meta charset="utf-8">
+    </head>
+<body>
+    <p><h1>Hello World!</h1></p>
+    <h2>Interests of mine include:</h2>
+    <!-- code comment, details tbd -->
+    <ul>
+        <li>Gaming</li>
+        <li>Anime</li>
+        <li>Computers</li>
+    </ul>
+    <h2>Favourite Movies:</h2>
+    <ol>
+        <li>Harry Potter</li>
+        <li>Ready Player One</li>
+        <li>Wolf of Wall Street</li>
+    </ol>
+Here is a link to <a href="http://www.reddit.com" target="_blank"> Reddit</a>
+<br>
+<div id="output"></div>
+<br>
+
+<button id="btnLaunch" onclick="runCode()">Click Here for JS</button>
+<br>
+<br>
+<button id="btnRunMoreCode">Run More Code</button>
+<script>
+function runCode(){
+    // this is a no-arg function
+    let myVal="SK"; //assigns the string SK to myVal;
+    let yourVal;
+    yourVal=10; //seperating declaration from assignment/initialization
+    console.log("hello,",myVal,"more words","even more words");
+    //let's declare and populate an array
+    const cars=["Saab","Ford","Honda"];
+    // displaying those values is done by 0-based indexing
+    console.log(cars[0]); //prints Saab. index 1 is ford, 2 is honda
+    //to add a new value , use array.push(), to remove last value, use array.pop()
+    cars.push("Toyota");
+    console.log(cars);
+    const fruits=["Banana","Orange","Apple","Mango"];
+    //pop last value and store in var
+    let mango=fruits.pop();
+    console.log(mango);
+    let orange=fruits[1];
+    console.log(orange);
+    console.log(fruits);
+    //update the innerHTML of output div with the remaining fruits
+    document.getElementById("output").innerHTML="<h1>"+fruits+"</h1>";
+
+}
+//outside of the prior function
+document.getElementById("btnRunMoreCode").onclick=function(){
+    // alert("anon function worked!");
+    let yourName=prompt("Enter your name, please"); //input dialog box
+    console.log("hello",yourName);
+    console.log("Length of Your Name is",yourName.length);
+    console.log("Converted to uppercase, Your Name is",yourName.toUpperCase());
+    let fullName=yourName.concat(" Iyer");
+    console.log("Full Name is",fullName);
+
+    let myNum=5;
+    let newNum=myNum+8; //basic math fun
+
+    let myBool=true; //boolean
+    
+    // 2. Conditionals & Control Flow
+    let movieRating=5;
+
+    if(movieRating === 5){
+        console.log("Superb!");
+    }
+    else if(movieRating === 4){
+        console.log("pretty good");
+    }
+    else if(movieRating === 3){
+        console.log("not too shabby");
+    }
+    else if(movieRating === 2){
+        console.log("ehhh");
+    }
+    else{
+        console.log("pass on that one");
+    }
+}
+// alternative function declaration
+const sayHello = function(){
+    // stuff goes here
+}
+// parameterized function
+const sayHiToMe=function(strName){
+    console.log("Well, hello,",strName);
+}
+sayHiToMe("Tom Cruise"); //invoking the parameterized function sayHiToMe
+let theNum=prompt("Enter a number");
+//theNum=Number.parseInt(theNum);
+theNum=Math.round(theNum);
+// do an even/odd test
+if(theNum %2===0){
+    alert(theNum +" is an even number");
+}
+else{
+    alert(theNum +" is an odd number");
+}
+</script>
+</body>
+</html>

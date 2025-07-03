@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Posting a Form to API Route</title>
+<meta charset="utf-8">
+
+<body>
+    <form>
+        <label for="txtFName">First Name</label>
+        <input type="text" id="txtFName" required>
+        <br>
+        <label for="txtLName">Last Name</label>
+        <input type="text" id="txtLName" required>
+        <br>
+        <label for="numAge" style="margin-right: 43px;">Age</label>
+        <input type="number" id="numAge" required>
+        <br>
+        <label for="selGender" style="margin-right: 23px;">Gender</label>
+        <select id="selGender" required>
+            <option value="M">M</option>
+            <option value="F">F</option>
+        </select>
+        <br><br>
+        <input type="button" value="Submit" onclick="processData()">
+        <br>
+        <div id="output"></div>
+    </form>
+    <script>
+        function processData() {
+            let fName, lName, age, gender;
+            // capture each from control value and assign to var
+            fName = document.getElementById("txtFName").value;
+            lName = document.getElementById("txtLName").value;
+            age = document.getElementById("numAge").value;
+            gender = document.getElementById("selGender").value;
+            // build a JS object
+            const myData = {
+                firstName: fName,
+                lastName: lName,
+                age: age,
+                gender: gender
+            };
+            console.log(myData);
+            console.log(JSON.stringify(myData));
+            // assign your api endpoint route to a const
+            const url = "https://cisweb.biz.colostate.edu/cis665/KinnettS/API/actor/";
+            // enhanced fetch call
+            fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(myData)
+            })
+                .then((theResponse) => {
+                    return theResponse.json();
+                }
+                )
+                .then((jsonResp) => {
+                    console.log(jsonResp);
+                    document.getElementById("output").innerHTML="Record written successfully";
+                    
+                })
+                .catch((err)=>{
+                    console.log(err);
+                    document.getElementById("output").innerHTML="Error Posting to API";
+                });
+        }
+    </script>
+</body>
+
+</html>

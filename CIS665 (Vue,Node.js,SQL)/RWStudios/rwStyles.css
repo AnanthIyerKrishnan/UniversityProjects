@@ -1,0 +1,198 @@
+/* rwIndex styles as follows:  */
+h1{
+    color:#1a237e;
+}
+h3{
+    color: gray;
+}
+body{
+    font-family: Georgia,Garamond,Arial;
+    /* a CSS comment */
+    margin: 0px;
+}
+a{
+    color: #3e9c35;
+    text-decoration: none;
+}
+/* next here comes a css class */
+.my-container-outer{
+    display: flex;
+    justify-content: center;
+}
+.my-container-row{
+    padding: 20px;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.my-item{
+    padding: 20px;
+    flex: 1 1 300px;
+}
+.hero{
+    padding: 50px 10px;
+    /* 2 numbers yieldd top/bottom and left/right */
+}
+.hero h1{
+    /* styles h1s that are childern of containers with the hero class applied */
+    font-size: 45px;
+}
+.hero p{
+    /* paragraphs under hero class */
+    font-size: 20px;
+    line-height: 1.5em;
+    /* 1.5em means 50% larger than "standard" */
+}
+/* next,styling specific IDs */
+#hero-home{
+    background: linear-gradient(to top right,rgba(27,94,32,0.9),rgba(26,35,126,0.9)),url("photos/Parasite.jpg");
+    color: #ffffff;
+}
+#hero-home h1{
+    /* styles any h1 element that are child elements with the id hero-home */
+    color: #ffffff;
+}
+#headline-title-container{
+    box-shadow:  0px 0px 30px rgba(0,0,0,0.3);
+    padding: 30px 30px 30px 40px;
+    max-width: 300px;
+    text-align: right;
+    margin-left: auto;
+}
+#hero-description{
+    max-width: 400px;
+}
+.my-item-center-vertical{
+    /* achieves vertical flex centering in standard axis scenario */
+    display: flex;
+    align-items: center;
+}
+.my-item-center-horizontal{
+    /* achieves horizontal centering in standard axis scenario */
+    display: flex;
+    justify-content: center;
+}
+
+/* rwBlogHW3 styles as follows:  */
+.my-container-outer{
+    display: flex;
+    justify-content: center;
+}
+.my-container-row{
+    padding: 20px;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.my-item{
+    padding: 20px;
+    flex: 1 1 300px;
+}
+.side-article {
+    margin: 30px 20px;
+}
+.side-article h5,
+.side-article h3,
+.side-article p {
+    margin: 10px 0px;
+}
+
+.hero{
+    padding: 50px 10px;
+    /* 2 numbers yieldd top/bottom and left/right */
+}
+.hero h1{
+    /* styles h1s that are childern of containers with the hero class applied */
+    font-size: 45px;
+}
+.hero p{
+    /* paragraphs under hero class */
+    font-size: 20px;
+    line-height: 1.5em;
+    /* 1.5em means 50% larger than "standard" */
+}
+/* next,styling specific IDs */
+#hero-blog {
+    background: rgba(255, 255, 255, 0.85) url("photos/power_rangers.jpg");
+    background-blend-mode: lighten;
+    color: #ffffff;
+}
+#hero-blog h1{
+    /* styles any h1 element that are child elements with the id hero-home */
+    color: #ffffff;
+}
+#headline-title-container{
+    box-shadow:  0px 0px 30px rgba(0,0,0,0.3);
+    padding: 30px 30px 30px 40px;
+    max-width: 300px;
+    text-align: right;
+    margin-left: auto;
+}
+#hero-description{
+    max-width: 400px;
+}
+.my-item-center-vertical{
+    /* achieves vertical flex centering in standard axis scenario */
+    display: flex;
+    align-items: center;
+}
+.my-item-center-horizontal{
+    /* achieves horizontal centering in standard axis scenario */
+    display: flex;
+    justify-content: center;
+}
+h5 {
+    color: #1a237e;
+}
+.button-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1b5e20;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+.footer{
+    text-align: center;
+    padding: 20px;
+    background-color: lightgray;
+    word-spacing: 5px;
+}
+header {
+    display: flex;
+    justify-content: space-between; /* Pushes items to both ends */
+    align-items: center; /* Aligns items vertically */
+    padding: 10px 20px;
+    background-color: white;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#logo-container img {
+    height: 40px; /* Adjust based on your design */
+    margin-right: 10px; /* Space between logo and text */
+}
+.sign-in {
+    background-color: orange;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}

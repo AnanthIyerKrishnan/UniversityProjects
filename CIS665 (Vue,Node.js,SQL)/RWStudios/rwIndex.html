@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rockwell Studios</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="movies,cinema">
+    <meta name ="author" content="CIS 665">
+    <!--additional meta tags/data can be added here-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="rwStyles.css">
+    <!-- <style>
+        h1{color: green;}
+    </style> -->
+</head>
+<body>
+<header>
+    <a href="rwIndex.html">
+        <img src="photos/rwStudiosLogo.png" alt="Rockwell Studios Logo">
+       <h2>Rockwell Studios</h2>
+    </a>
+<nav>
+    <ul>
+        <li><a href="rwIndex.html">Home</a></li>
+        <!--remaining links to be updated later-->
+        <li><a href="rwIndex.html">Catalog</a></li>
+        <li><a href="rwIndex.html">Blog</a></li>
+        <li><a href="rwIndex.html"><button>Sign In</button></a></li>
+    </ul>
+</nav>
+</header>
+<!-- BANNER SECTION -->
+ <!--outer row (comment comes before the code for it)-->
+ <div class="my-container-outer hero" id="hero-home">
+    <!--inner row-->
+    <div class="my-container-row">
+        <!--outer column 1-->
+        <div class="my-item my-item-center-horizontal">
+            <!-- inner column 1-->
+             <div id="headline-title-container">
+                <h1>Art Imitates Life</h1>
+             </div>
+        </div>
+        <!--outer column 2-->
+        <div class="my-item my-item-center-horizontal my-item-center-vertical">
+            <!--inner column 2-->
+            <div id="hero-description">
+                <p>Rockwell Studios produces and distributes a variety of cinematic productions for a global audience.</p>
+                <a href="rwIndex.html"><button>Free Trial</button></a>
+            </div>
+        </div>
+    </div>
+ </div>
+<!--CONTENT SECTION-->
+<div class="my-container-outer">
+    <div class="my-container-row">
+        <div class="my-item">
+<h3>World Class Content</h3>
+<h1>Life in Moving Pictures</h1>
+<p>Since 1932, Rockwell Studios has been on the cutting edge of cinema production. Our wide selection of content includes:
+<ul>
+    <li>Comedies</li>
+    <li>Drama</li>
+    <li>Documentaries</li>
+    <li>Independent Films</li>
+</ul>
+    <!-- link "Motion Picture Association of America" to https://www.motionpictures.org/  -->
+    We are a leading member of the<a href="https://www.motionpictures.org/" target="_blank">Motion Picture Association of America.</a></p>
+        </div>
+        <div class="my-item">
+            <!-- Bill-and-Ted-3.jpg image in photos folder -->
+            <img src="photos/Bill-and-Ted-3.jpg" alt="Bill and Ted Face the Music">
+        </div>
+    </div>
+</div>
+<!--RANDOM QUOTE SECTION-->
+<div class="my-container-outer">
+    <div class="my-container-row">
+        <div class="my-item">
+            <h4>Random Movie Quote</h4>
+            <h2 id="random-quote-text">"Madness is like gravity, all it takes is a little push."</h2>
+            <h3 id="random-quote-movie" style="margin-bottom: 50px;">The Dark Knight</h3>
+            <button id="new-quote" class="btn btn-warning">New Quote</button>
+        </div>
+    </div>
+</div>
+<!-- FOOTER -->
+ <footer>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Careers</a>
+    <hr>
+    <div>
+        Developed by CIS665 &copy; 2025
+    </div>
+ </footer>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ <script src="rwIndexScript.js"></script>
+</body>
+</html>
